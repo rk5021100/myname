@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ROHIT KUMAR</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    overflow:hidden;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Animated background */
+body::before{
+    content:"";
+    position:absolute;
+    width:300%;
+    height:300%;
+    background:
+        radial-gradient(circle,#ff0080 2px,transparent 3px),
+        radial-gradient(circle,#00e5ff 2px,transparent 3px),
+        radial-gradient(circle,#00ff88 2px,transparent 3px);
+    background-size:120px 120px;
+    animation:move 25s linear infinite;
+    opacity:0.25;
+}
+
+@keyframes move{
+    from{transform:translate(0,0);}
+    to{transform:translate(-200px,-200px);}
+}
+
+.name{
+    position:relative;
+    z-index:1;
+    font-size:80px;
+    font-weight:bold;
+    text-transform:uppercase;
+    letter-spacing:8px;
+    text-align:center;
+
+    background:linear-gradient(
+        90deg,
+        #ff0000,
+        #ff9900,
+        #ffee00,
+        #00ff00,
+        #00ffff,
+        #0066ff,
+        #cc00ff,
+        #ff0080,
+        #ff0000
+    );
+
+    background-size:400%;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    animation:
+        rainbow 6s linear infinite,
+        glow 2s ease-in-out infinite alternate,
+        float 3s ease-in-out infinite;
+}
+
+@keyframes rainbow{
+    0%{background-position:0%;}
+    100%{background-position:400%;}
+}
+
+@keyframes glow{
+    from{
+        filter:drop-shadow(0 0 8px #ffffff);
+    }
+    to{
+        filter:drop-shadow(0 0 30px #00ffff)
+               drop-shadow(0 0 50px #ff00ff);
+    }
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+.subtitle{
+    margin-top:20px;
+    text-align:center;
+    color:white;
+    font-size:22px;
+    letter-spacing:4px;
+    animation:blink 2s infinite;
+}
+
+@keyframes blink{
+    50%{opacity:0.5;}
+}
+</style>
+
+</head>
+<body>
+
+<div>
+    <div class="name">ROHIT KUMAR</div>
+    <div class="subtitle">✨ Welcome ✨</div>
+</div>
+
+</body>
+</html>
